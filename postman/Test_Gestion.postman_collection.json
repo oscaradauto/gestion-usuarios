@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "c24cf74e-8471-4b9d-81c4-52995646a8f0",
+		"name": "Test_Gestion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10974434",
+		"_collection_link": "https://k12999.postman.co/workspace/K12-Workspace~73f1aa4d-2990-4486-8bdc-2a64d418c3d4/collection/10974434-c24cf74e-8471-4b9d-81c4-52995646a8f0?action=share&source=collection_link&creator=10974434"
+	},
+	"item": [
+		{
+			"name": "Gestion",
+			"item": [
+				{
+					"name": "postStudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Oscar Adauto\",\r\n  \"email\": \"martin.giraldo@mail.com\",\r\n  \"password\": \"Admin123\",\r\n  \"phones\": [\r\n    {\r\n      \"number\": \"7654321\",\r\n      \"citycode\": \"24\",\r\n      \"contrycode\": \"57\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllStudent",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getStudentById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/5351df33-2152-4707-92bc-bbddecc1b36e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"5351df33-2152-4707-92bc-bbddecc1b36e"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:8080/api/users/550e8400-e29b-41d4-a716-446655440000\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "putStudentById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Oscar Adauto\",\r\n  \"email\": \"oscar.adauto@email.com\",\r\n  \"password\": \"Admin456\",\r\n  \"phones\": [\r\n    {\r\n      \"number\": \"7654321\",\r\n      \"citycode\": \"34\",\r\n      \"contrycode\": \"57\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/update/5351df33-2152-4707-92bc-bbddecc1b36e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"update",
+								"5351df33-2152-4707-92bc-bbddecc1b36e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteStudentById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/5351df33-2152-4707-92bc-bbddecc1b36e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"5351df33-2152-4707-92bc-bbddecc1b36e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
