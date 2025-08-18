@@ -54,6 +54,8 @@ src/main/java/com/app/evaluacion/gestion
 
 ##  Endpoints principales
 
+**1. Importar con Postman app el siguiente archivo:  postman/Test_Gestion.postman_collection.json**
+
 ### Crear usuario
 ```http
 POST /api/users/register
