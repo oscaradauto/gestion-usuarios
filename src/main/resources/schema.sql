@@ -12,9 +12,9 @@ CREATE TABLE users (
 
 CREATE TABLE phones (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    number BIGINT NOT NULL,
-    citycode INT NOT NULL,
-    contrycode INT NOT NULL,
+    number VARCHAR(50) NULL,
+    citycode VARCHAR(10) NULL,
+    contrycode VARCHAR(10) NULL,
     user_id VARCHAR(36),
     CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES users(id)
 );

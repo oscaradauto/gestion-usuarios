@@ -1,6 +1,9 @@
 package com.app.evaluacion.gestion.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class PhoneRequestDto {
+
     private String number;
     private String citycode;
     private String contrycode;

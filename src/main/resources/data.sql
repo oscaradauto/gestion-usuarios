@@ -13,4 +13,4 @@ VALUES (
 );
 
 INSERT INTO phones (number, citycode, contrycode, user_id)
-VALUES (1234567, 1, 57, '550e8400-e29b-41d4-a716-446655440000');
+VALUES ('1234567', '1', '57', '550e8400-e29b-41d4-a716-446655440000');

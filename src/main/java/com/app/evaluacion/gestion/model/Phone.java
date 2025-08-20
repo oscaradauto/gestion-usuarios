@@ -10,8 +10,13 @@ public class Phone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = true)
     private String number;
+
+    @Column(nullable = true)
     private String citycode;
+
+    @Column(nullable = true)
     private String contrycode;
 
     @ManyToOne

@@ -22,13 +22,6 @@ public class UserMapper {
     public UserResponseDto toDto(User user) {
         UserResponseDto dto = modelMapper.map(user, UserResponseDto.class);
 
-        if (user.getPhones() != null) {
-            List<PhoneResponseDto> phones = user.getPhones().stream()
-                    .map(this::toDtoPhone)
-                    .collect(Collectors.toList());
-            dto.setPhones(phones);
-        }
-
         return dto;
     }
 

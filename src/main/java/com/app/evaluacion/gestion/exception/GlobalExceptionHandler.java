@@ -7,6 +7,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
@@ -32,11 +33,7 @@ public class GlobalExceptionHandler {
                 .collect(Collectors.joining(", "));
 
         ErrorMessage error = new ErrorMessage(
-                LocalDateTime.now(),
-                HttpStatus.BAD_REQUEST.value(),
-                "Validacion fallida",
-                errors,
-                request.getDescription(false).replace("uri=", "")
+                errors
         );
 
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
@@ -49,12 +46,17 @@ public class GlobalExceptionHandler {
 
     private ResponseEntity<ErrorMessage> buildErrorResponse(Exception ex, HttpStatus status, WebRequest request) {
         ErrorMessage error = new ErrorMessage(
-                LocalDateTime.now(),
-                status.value(),
-                status.getReasonPhrase(),
-                ex.getMessage(),
-                request.getDescription(false).replace("uri=", "")
+
+                ex.getMessage()
         );
         return new ResponseEntity<>(error, status);
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ErrorMessage> handleEmptyBody(HttpMessageNotReadableException ex, WebRequest request) {
+        ErrorMessage error = new ErrorMessage(
+                "El cuerpo de la solicitud no puede estar vacio o tiene un formato invalido"
+        );
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 }
