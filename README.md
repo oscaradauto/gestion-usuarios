@@ -58,7 +58,7 @@ src/main/java/com/app/evaluacion/gestion
 
 ### Crear usuario
 ```http
-POST /api/users/register
+POST /api/users
 Content-Type: application/json
 ```
 Body:
